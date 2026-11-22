@@ -18,7 +18,7 @@ export function ForgotPasswordScreen() {
   const submit = async () => {
     setErr(null);
     const v = id.trim();
-    if (!isEmail(v) && !normalizePhone(v)) { setErr('Enter a valid email or 10-digit mobile number'); return; }
+    if (!isEmail(v) && !normalizePhone(v)) { setErr('Enter a valid email'); return; }
     setBusy(true);
     try {
       if (isEmail(v)) {
@@ -33,10 +33,10 @@ export function ForgotPasswordScreen() {
   };
   return (
     <AuthLayout title="Forgot password?" subtitle="We'll send a reset link to your email, or a code to your phone.">
-      <AppInput label="Email or phone number" value={id} onChangeText={setId} autoCapitalize="none" keyboardType="email-address" error={err ?? undefined} />
+      <AppInput label="Email" value={id} onChangeText={setId} autoCapitalize="none" keyboardType="email-address" error={err ?? undefined} />
       <PrimaryButton title="Continue" onPress={submit} loading={busy} />
       <SecondaryButton title="Back to login" onPress={() => nav.goBack()} />
-      <AppText variant="caption" color="secondary" style={{ textAlign: 'center' }}>Phone recovery needs an SMS provider configured in Supabase.</AppText>
+      {/* <AppText variant="caption" color="secondary" style={{ textAlign: 'center' }}>Phone recovery needs an SMS provider configured in Supabase.</AppText> */}
     </AuthLayout>
   );
 }
