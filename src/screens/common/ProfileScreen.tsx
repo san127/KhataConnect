@@ -102,7 +102,7 @@ export function ProfileScreen() {
           <Row icon={ShieldAlert} label="Disputes" onPress={() => nav.navigate('Disputes')} />
         </>)}
         <Row icon={Palette} label="Theme & notifications" onPress={() => nav.navigate('Settings')} />
-        <Row icon={Phone} label="Verify phone for phone login" onPress={verifyPhone} />
+        {/* <Row icon={Phone} label="Verify phone for phone login" onPress={verifyPhone} /> */}
         <Row icon={Repeat} label={shopMode ? 'Switch to customer' : 'Switch to shopkeeper'} onPress={switchMode} />
       </RoundedCard>
 

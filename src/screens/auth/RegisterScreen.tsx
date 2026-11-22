@@ -40,8 +40,8 @@ export function RegisterScreen() {
   return (
     <AuthLayout title="Create your account" subtitle="Use an email or a phone number. One account works as customer and shopkeeper.">
       {f('full_name', 'Full name', { autoCapitalize: 'words' })}
-      {f('email', 'Email (optional if you add a phone)', { autoCapitalize: 'none', keyboardType: 'email-address' })}
-      {f('phone', 'Phone number (optional if you add an email)', { keyboardType: 'phone-pad' })}
+      {f('email', 'Email', { autoCapitalize: 'none', keyboardType: 'email-address' })}
+      {/* {f('phone', 'Phone number (optional if you add an email)', { keyboardType: 'phone-pad' })} */}
       {f('password', 'Password', { secure: true, autoCapitalize: 'none' })}
       {f('confirm', 'Confirm password', { secure: true, autoCapitalize: 'none' })}
       {err ? <AppText color="error">{err}</AppText> : null}

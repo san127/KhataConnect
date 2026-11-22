@@ -32,7 +32,7 @@ export function LoginScreen() {
     <AuthLayout title="Welcome back" subtitle="Log in to see your khata.">
       {!isConfigured ? <AppText color="warning">Supabase isn't configured yet. Add your keys to .env (see README).</AppText> : null}
       <Controller control={control} name="identifier" render={({ field }) => (
-        <AppInput label="Email or phone number" value={field.value} onChangeText={field.onChange} autoCapitalize="none" keyboardType="email-address" error={errors.identifier?.message} />
+        <AppInput label="Email" value={field.value} onChangeText={field.onChange} autoCapitalize="none" keyboardType="email-address" error={errors.identifier?.message} />
       )} />
       <Controller control={control} name="password" render={({ field }) => (
         <AppInput label="Password" secure value={field.value} onChangeText={field.onChange} autoCapitalize="none" error={errors.password?.message} onSubmitEditing={() => { submit(); }} />

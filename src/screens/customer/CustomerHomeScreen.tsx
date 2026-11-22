@@ -137,6 +137,10 @@ import { listPayments } from '../../services/payment/paymentService';
 import { formatINR } from '../../utils/money';
 import { fmtDate } from '../../utils/dates';
 
+
+import { testLocalNotification } from '../../services/notification/pushService';
+
+
 function greeting() {
   const h = new Date().getHours();
 
@@ -148,6 +152,7 @@ function greeting() {
 }
 
 export function CustomerHomeScreen() {
+  // testLocalNotification();
   const nav = useNavigation<any>();
   const { theme } = useTheme();
 
@@ -207,6 +212,7 @@ export function CustomerHomeScreen() {
   );
 
   return (
+    
     <Screen refreshing={refreshing} onRefresh={reload}>
 
       {/* Clickable profile header */}
